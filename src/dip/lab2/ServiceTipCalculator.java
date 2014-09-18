@@ -17,5 +17,5 @@ public interface ServiceTipCalculator {
     
     public double getTip();
     
-    
+public void setServiceRating();
 }

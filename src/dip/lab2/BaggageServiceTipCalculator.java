@@ -8,7 +8,7 @@ package dip.lab2;
  *
  * @author your name goes here
  */
-public class BaggageServiceTipCalculator implements ServiceTipCalculator{
+public abstract class BaggageServiceTipCalculator implements ServiceTipCalculator{
     private double minBill = 0.00;
     private double maxBill = 100.00;
     private String billEntryErr =
@@ -20,6 +20,8 @@ public class BaggageServiceTipCalculator implements ServiceTipCalculator{
 
     private double baseTipPerBag;
     private int bagCount;
+
+    
     public enum ServiceQuality {
         GOOD, FAIR, POOR
     }

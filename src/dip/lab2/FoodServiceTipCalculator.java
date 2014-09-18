@@ -8,7 +8,8 @@ package dip.lab2;
  *
  * @author your name goes here
  */
-public class FoodServiceTipCalculator implements ServiceTipCalculator{
+public abstract class FoodServiceTipCalculator implements ServiceTipCalculator{
+    
     private double minBill = 0.00;
     private String billEntryErr =
             "Error: bill must be greater than or equal to " + minBill;
@@ -16,13 +17,14 @@ public class FoodServiceTipCalculator implements ServiceTipCalculator{
     private double fairRate = 0.15;
     private double poorRate = 0.10;
     private double bill;
+    
     public enum ServiceQuality {
         GOOD, FAIR, POOR
     }
     private ServiceQuality serviceQuality;
 
     
-    public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
+    public void FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
         this.setBill(billAmt);
     }
