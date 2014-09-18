@@ -11,11 +11,13 @@ package dip.lab2;
  * @author rdavidson1
  */
 public interface ServiceTipCalculator {
+    //Common service methods
     
-    
-    
-    
+    public void setTip();
+            
     public double getTip();
     
-public void setServiceRating();
+    public void setServiceRating();
+     
+    public void setBill();
 }

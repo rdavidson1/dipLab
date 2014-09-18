@@ -17,12 +17,16 @@ public abstract class FoodServiceTipCalculator implements ServiceTipCalculator{
     private double fairRate = 0.15;
     private double poorRate = 0.10;
     private double bill;
+
+    
     
     public enum ServiceQuality {
         GOOD, FAIR, POOR
     }
     private ServiceQuality serviceQuality;
 
+    
+    
     
     public void FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
@@ -53,8 +57,13 @@ public abstract class FoodServiceTipCalculator implements ServiceTipCalculator{
             throw new IllegalArgumentException(billEntryErr);
         }
         bill = billAmt;
+        
+    }
+    public double getBill() {
+        return bill;
     }
 
+    
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;

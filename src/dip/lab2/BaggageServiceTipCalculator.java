@@ -29,6 +29,9 @@ public abstract class BaggageServiceTipCalculator implements ServiceTipCalculato
 
     
     
+    
+    
+    
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
         this.setServiceRating(q); // perform validation
         this.setBagCount(bags);
