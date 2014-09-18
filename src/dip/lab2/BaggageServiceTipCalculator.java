@@ -9,14 +9,14 @@ package dip.lab2;
  * @author your name goes here
  */
 public class BaggageServiceTipCalculator implements ServiceTipCalculator{
-    private static final double MIN_BILL = 0.00;
-    private static final double MAX_BILL = 100.00;
-    private static final String BILL_ENTRY_ERR =
-            "Error: bill must be between " + MIN_BILL + " and "
-            + MAX_BILL;
-    private static final double GOOD_RATE = 0.20;
-    private static final double FAIR_RATE = 0.15;
-    private static final double POOR_RATE = 0.10;
+    private double minBill = 0.00;
+    private double maxBill = 100.00;
+    private String billEntryErr =
+            "Error: bill must be between " + minBill + " and "
+            + maxBill;
+    private double goodRate = 0.20;
+    private double fairRate = 0.15;
+    private double poorRate = 0.10;
 
     private double baseTipPerBag;
     private int bagCount;
@@ -25,6 +25,8 @@ public class BaggageServiceTipCalculator implements ServiceTipCalculator{
     }
     private ServiceQuality serviceQuality;
 
+    
+    
     public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
         this.setServiceRating(q); // perform validation
         this.setBagCount(bags);
@@ -32,18 +34,19 @@ public class BaggageServiceTipCalculator implements ServiceTipCalculator{
         baseTipPerBag = 1.00; // set default value
     }
 
-    public double getTipForBaggeHandler() {
+    @Override
+    public double getTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
             case GOOD:
-                tip = baseTipPerBag * bagCount * (1 + GOOD_RATE);
+                tip = baseTipPerBag * bagCount * (1 + goodRate);
                 break;
             case FAIR:
-                tip = baseTipPerBag * bagCount * (1 + FAIR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + fairRate);
                 break;
             case POOR:
-                tip = baseTipPerBag * bagCount * (1 + POOR_RATE);
+                tip = baseTipPerBag * bagCount * (1 + poorRate);
                 break;
         }
 
