@@ -12,4 +12,10 @@ package dip.lab2;
  */
 public interface ServiceTipCalculator {
     
+    
+    
+    
+    public double getTip();
+    
+    
 }
